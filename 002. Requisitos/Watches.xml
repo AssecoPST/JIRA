@@ -1,0 +1,10 @@
+﻿<Properties>
+  <WatchEntry0 value="arrWeblistItems" />
+  <WatchEntry1 value="ubound(arrWeblistItems)" />
+  <WatchEntry2 value="itemLista" />
+  <WatchEntry3 value="comprimento" />
+  <WatchEntry4 value="itemLabel" />
+  <WatchEntry5 value="ucase(itemLista)" />
+  <WatchEntry6 value="ucase((trim(itemToSelect)))" />
+  <WatchEntry7 value="itemCounter" />
+</Properties>

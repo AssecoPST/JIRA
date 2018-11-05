@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.1.3.0
+Project("") = "001. Inserir Requisitos", "001. Inserir Requisitos\Test.tsp", "2362226B-F50F-44D8-AA96-668B4C4386D6"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = P:\JIRA\001. Inserir Requisitos\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+	EndProjectSection
+EndProject
+Project("") = "003. Relacionar", "003. Relacionar\Test.tsp", "4D50F204-3478-45F1-A682-8E865B840819"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = P:\JIRA\003. Relacionar\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+		BaselineId = 
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		2362226B-F50F-44D8-AA96-668B4C4386D6.Debug|Any CPU.Build.0 = Debug|Any CPU
+		2362226B-F50F-44D8-AA96-668B4C4386D6.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		2362226B-F50F-44D8-AA96-668B4C4386D6.Release|Any CPU.Build.0 = Release|Any CPU
+		2362226B-F50F-44D8-AA96-668B4C4386D6.Release|Any CPU.ActiveCfg = Release|Any CPU
+		4D50F204-3478-45F1-A682-8E865B840819.Debug|Any CPU.Build.0 = Debug|Any CPU
+		4D50F204-3478-45F1-A682-8E865B840819.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		4D50F204-3478-45F1-A682-8E865B840819.Release|Any CPU.Build.0 = Release|Any CPU
+		4D50F204-3478-45F1-A682-8E865B840819.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(Function Libraries) = postProject
+		LIB_FUNC_JIRA = P:\JIRA\FUNCTIONS\LIB_FUNC_JIRA.qfl
+	EndGlobalSection
+EndGlobal

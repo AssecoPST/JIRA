@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.1.3.0
+Project("") = "001. Inserir Requisitos PRD", "001. Inserir Requisitos PRD\Test.tsp", "609C3440-0B40-4D5C-BB10-4870A897A586"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = P:\JIRA\001. Inserir Requisitos PRD\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+	EndProjectSection
+EndProject
+Project("") = "002. Assignar Issue", "002. Assignar Issue\Test.tsp", "662E917F-403E-4378-A82F-5D6F73AF8061"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = P:\JIRA\002. Assignar Issue\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		609C3440-0B40-4D5C-BB10-4870A897A586.Debug|Any CPU.Build.0 = Debug|Any CPU
+		609C3440-0B40-4D5C-BB10-4870A897A586.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		609C3440-0B40-4D5C-BB10-4870A897A586.Release|Any CPU.Build.0 = Release|Any CPU
+		609C3440-0B40-4D5C-BB10-4870A897A586.Release|Any CPU.ActiveCfg = Release|Any CPU
+		662E917F-403E-4378-A82F-5D6F73AF8061.Debug|Any CPU.Build.0 = Debug|Any CPU
+		662E917F-403E-4378-A82F-5D6F73AF8061.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		662E917F-403E-4378-A82F-5D6F73AF8061.Release|Any CPU.Build.0 = Release|Any CPU
+		662E917F-403E-4378-A82F-5D6F73AF8061.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

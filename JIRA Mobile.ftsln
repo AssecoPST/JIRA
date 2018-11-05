@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.1.3.0
+Project("") = "003. Relacionar", "003. Relacionar\Test.tsp", "13BD7A3C-EF42-4C1A-B585-A8B868B819F7"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = P:\JIRA\003. Relacionar\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+	EndProjectSection
+EndProject
+Project("") = "001. Necessidades", "001. Necessidades\Test.tsp", "1E6146D9-FBEA-409D-967C-DEAA48EA882D"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = P:\JIRA\001. Necessidades\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+		BaselineId = 
+	EndProjectSection
+EndProject
+Project("") = "002. Requisitos", "002. Requisitos\Test.tsp", "3F12D860-260C-49A4-9F67-91979AA5E9BB"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = P:\JIRA\002. Requisitos\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+		BaselineId = 
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		13BD7A3C-EF42-4C1A-B585-A8B868B819F7.Debug|Any CPU.Build.0 = Debug|Any CPU
+		13BD7A3C-EF42-4C1A-B585-A8B868B819F7.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		13BD7A3C-EF42-4C1A-B585-A8B868B819F7.Release|Any CPU.Build.0 = Release|Any CPU
+		13BD7A3C-EF42-4C1A-B585-A8B868B819F7.Release|Any CPU.ActiveCfg = Release|Any CPU
+		1E6146D9-FBEA-409D-967C-DEAA48EA882D.Debug|Any CPU.Build.0 = Debug|Any CPU
+		1E6146D9-FBEA-409D-967C-DEAA48EA882D.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		1E6146D9-FBEA-409D-967C-DEAA48EA882D.Release|Any CPU.Build.0 = Release|Any CPU
+		1E6146D9-FBEA-409D-967C-DEAA48EA882D.Release|Any CPU.ActiveCfg = Release|Any CPU
+		3F12D860-260C-49A4-9F67-91979AA5E9BB.Debug|Any CPU.Build.0 = Debug|Any CPU
+		3F12D860-260C-49A4-9F67-91979AA5E9BB.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		3F12D860-260C-49A4-9F67-91979AA5E9BB.Release|Any CPU.Build.0 = Release|Any CPU
+		3F12D860-260C-49A4-9F67-91979AA5E9BB.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

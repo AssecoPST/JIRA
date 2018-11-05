@@ -1,0 +1,5 @@
+﻿<Properties>
+  <WatchEntry0 value="release" />
+  <WatchEntry1 value="datatable.value(&quot;Release&quot;, &quot;Global&quot;)" />
+  <WatchEntry2 value="releaseID" />
+</Properties>
