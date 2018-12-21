@@ -1,5 +1,4 @@
-﻿AlterarRunMode
-
+﻿
 'importa da sheet Necessidades para a GlobalSheet 
 datatable.ImportSheet localFicheiro & "datapool.xlsx", "Requisitos", "Global"
 
@@ -7,21 +6,29 @@ datatable.ImportSheet localFicheiro & "datapool.xlsx", "Requisitos", "Global"
 i=1
 DataTable.SetCurrentRow(i)
  @@ hightlight id_;_Browser("PTPRMOB1171646I board").Page("Levantamento ATM sem Cartão").WebElement("More")_;_script infofile_;_ZIP::ssf5.xml_;_
+Browser("micClass:=Browser").Page("micClass:=Page").Link("html id:=create_link").Click
+ 
 'cria os requsitos
 while DataTable.Value("Requisito","Global") <>""
 	
-	Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").Link("btnCreate").Click
 	
-	Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebEdit("cboIssueType").WaitProperty "visible", true
-	Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebEdit("cboIssueType").Set "Requirement"
+	'wait 4
+	'Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=issuetype-field").WaitProperty "visible", true
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=issuetype-field").Set "Requirement"
 
-	Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebEdit("txSummary").Set datatable.value("Requisito", "Global") & " - " & datatable.value("Nome", "Global")
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=summary").Set datatable.value("Requisito", "Global") & " - " & datatable.value("Nome", "Global")
+	'Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=summary").Set datatable.value("Requisito", "Global") 'no âmbito de importar info ja do JIRA
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=description").Set datatable.value("Descricao", "Global")
 
-	Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebEdit("txtDescription").Set datatable.value("Descricao", "Global")
-
-
-	'Seleciona a release	
-	Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebList("cboRelease").Select datatable.value("Release", "Global")
+	
+	' """"""""""""""""""""" Identificação da Release """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	If datatable.value("Release", "Global") = "3G" Then
+		Browser("micClass:=Browser").Page("micClass:=Page").WebCheckBox("html id:=customfield_13600-2").Set "ON"
+	Else
+		Browser("micClass:=Browser").Page("micClass:=Page").WebCheckBox("html id:=customfield_13600-1").Set "ON"		
+	End If	
+	' """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""	
+	
 
 	'Seleciona o Tipo de Requisito
 	Select Case trim(datatable.value("Tipo", "Global"))
@@ -31,7 +38,7 @@ while DataTable.Value("Requisito","Global") <>""
 			ReqTipoID = 2
 	End Select
 	
-	Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebList("cboReqType1").Select "#"&ReqTipoID
+	Browser("micClass:=Browser").Page("micClass:=Page").WebList("html id:=customfield_10112").Select "#"&ReqTipoID
 	
 	' Se é requisto "Não funcional" então preenche o subtipo
 	If ReqTipoID = 2 Then 
@@ -46,7 +53,7 @@ while DataTable.Value("Requisito","Global") <>""
 				ReqTipoID = 3
 		End Select
 		
-		Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebList("cboReqType2").Select "#"&ReqTipoID	
+		Browser("micClass:=Browser").Page("micClass:=Page").WebList("hmtl id:=customfield_10112:1").Select "#"&ReqTipoID	
 			
 	End If
 	
@@ -55,13 +62,13 @@ while DataTable.Value("Requisito","Global") <>""
 
 	'Valida se a checkBox Create Another está selecionado
 	'Se tiver, retira a seleção, porque o JIRA bloqueia se forem efetuados vários registos sem fechar a janela.
-	checked=Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebCheckBox("chkCreateAnother").GetROProperty ("checked")
-	If checked=1 Then
-		Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebCheckBox("chkCreateAnother").Click
+	checked=Browser("micClass:=Browser").Page("micClass:=Page").WebCheckBox("html id:=qf-create-another", "visible:=true", "value:=on").GetROProperty ("checked")
+	If checked=0 Then
+		Browser("micClass:=Browser").Page("micClass:=Page").WebCheckBox("hmtl id:=qf-create-another", "visible:=true", "value:=on").Click
 	End If	
 	
 	'submeter o requisito
-	Browser("Débitos Directos AGO -").Page("Débitos Directos AGO -").WebButton("btnSubmitCreate").Click
+	Browser("micClass:=Browser").Page("micClass:=Page").WebButton("html id:=create-issue-submit").Click
 	
 	'avança para a linha seguinte do excel
 	i=i+1
