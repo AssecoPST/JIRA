@@ -11,10 +11,8 @@ Browser("micClass:=Browser").Page("micClass:=Page").Link("html id:=create_link")
 'cria os requsitos
 while DataTable.Value("Requisito","Global") <>""
 	
-	
-	'wait 4
-	'Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=issuetype-field").WaitProperty "visible", true
-	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=issuetype-field").Set "Requirement"
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=issuetype-field", "role:=combobox").WaitProperty "disabled", 0
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=issuetype-field", "role:=combobox").Set "Requirement"
 
 	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=summary").Set datatable.value("Requisito", "Global") & " - " & datatable.value("Nome", "Global")
 	'Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=summary").Set datatable.value("Requisito", "Global") 'no âmbito de importar info ja do JIRA
@@ -22,7 +20,7 @@ while DataTable.Value("Requisito","Global") <>""
 
 	
 	' """"""""""""""""""""" Identificação da Release """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-	If datatable.value("Release", "Global") = "3G" Then
+	If datatable.value("Release", "Global") = "R3G" Then
 		Browser("micClass:=Browser").Page("micClass:=Page").WebCheckBox("html id:=customfield_13600-2").Set "ON"
 	Else
 		Browser("micClass:=Browser").Page("micClass:=Page").WebCheckBox("html id:=customfield_13600-1").Set "ON"		
@@ -61,7 +59,8 @@ while DataTable.Value("Requisito","Global") <>""
 	
 
 	'Valida se a checkBox Create Another está selecionado
-	'Se tiver, retira a seleção, porque o JIRA bloqueia se forem efetuados vários registos sem fechar a janela.
+	'Se 0 não está selecionado
+	'Se 1 está selecionado
 	checked=Browser("micClass:=Browser").Page("micClass:=Page").WebCheckBox("html id:=qf-create-another", "visible:=true", "value:=on").GetROProperty ("checked")
 	If checked=0 Then
 		Browser("micClass:=Browser").Page("micClass:=Page").WebCheckBox("hmtl id:=qf-create-another", "visible:=true", "value:=on").Click
@@ -75,4 +74,5 @@ while DataTable.Value("Requisito","Global") <>""
     DataTable.SetCurrentRow(i)  
 wend
 
+Browser("micClass:=Browser").Page("micClass:=Page").Link("class:=cancel", "visible:=true").Click
 
