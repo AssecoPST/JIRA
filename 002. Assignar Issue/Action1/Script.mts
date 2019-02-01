@@ -6,10 +6,11 @@ i=1
 DataTable.SetCurrentRow(i)
 
 while DataTable.Value("Requisito","Global") <>""
-		
-	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:= quickSearchInput").Set trim(datatable.value("REQ_KEY", "Global"))
-	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:= quickSearchInput").Submit
 	
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=quickSearchInput").WaitProperty "disabled", 0	
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=quickSearchInput").Set trim(datatable.value("REQ_KEY", "Global"))
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=quickSearchInput").Submit
+	Browser("micClass:=Browser").Page("micClass:=Page").WebEdit("html id:=quickSearchInput").WaitProperty "disabled", 0
 
 	'valida se a consulta foi efetuada corretamente
 	Issue = trim(Browser("micClass:=Browser").Page("micClass:=Page").Link("html id:=key-val", "class:=issue-link").GetROProperty ("innertext"))
